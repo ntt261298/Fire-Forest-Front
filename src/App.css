@@ -1,33 +1,170 @@
-.App {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Roboto;
+    background-image: url(assets/forest-fire.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Header Style */
+.header {
+    text-align: center;
+    height: 100px;
+}
+.header h1 {
+    font-size: 40px; 
+    margin-top: 20px;
+}
+/* Input Style */
+.input {
+    padding: 0 30px;
+    margin-top: 20px;
+    border-bottom: 0.5px solid #7c7c7c;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    'user option-1 option-2 option-3'
+}
+.user {
+    grid-area: user;
+    text-align: center;
+  }
+  .user img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #009577;
+  }
+  .user h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .user p {
+    font-size: 15px;
+    margin: 0;
+  }
+  .user button {
+    width: 100px;
+    height: 36px;
+    font-size: 12px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  .user .upload {
+    border-radius: 16px 0 0 16px;
+    background: #009577;
+  }
+  .user .delete {
+    border-radius: 0 16px 16px 0;
+    background: #707070;
+  }
+.input input[type="submit"] {
+  float: left;
+  margin-left: 35px;
+  width: 129px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background: #009577;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.submit {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.input input[type="submit"]:hover {
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+label {
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
   }
-  to {
-    transform: rotate(360deg);
+  .form {
+    height: 75px;
+    position: relative;
   }
+  .form input[type="text"] {
+    padding: 5px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #7c7c7c;
+    float: right;
+    width: 60%;
+    color: #fff;
+  }
+
+.option-3 label {
+    width: 120px;
 }
+
+  .prf-select {
+    width: 80px;
+    background: #444;
+    color: #ffffff;
+    border: 0;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.prf-option{
+    font-size: 25px;
+    font-weight: normal;
+}
+/* Result Style */
+.result {
+    text-align: center;
+    padding-top: 35px;
+    width: 65%;
+    margin: 0 auto; 
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        'area status accuracy'
+}
+.result input[type="text"] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 115px;
+    padding: 5px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid #009577;
+    float: right;
+    text-align: center;
+    font-size: 24px;
+  }
+.result input {
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 1280px) {
+    .result {
+        width: 75%;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .result {
+        width: 90%;
+    }
+  }
