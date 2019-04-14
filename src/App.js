@@ -5,12 +5,26 @@ import Input from '../src/components/Input';
 import Result from '../src/components/Result';
 
 class App extends Component {
+  state = {
+    area: '',
+    status: '',
+    accuracy: '',
+  }
+
+  setResult = (area, status, accuracy) => {
+    this.setState({
+      area,
+      status,
+      accuracy
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Input />
-        <Result />
+        <Input setResult={this.setResult}/>
+        <Result result={this.state}/>
       </div>
     );
   }
