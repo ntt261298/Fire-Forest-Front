@@ -166,6 +166,23 @@ label {
     display: none;
 }
 
+/* Data Page Style */
+.footer-data {
+  text-align: center;
+}
+
+.data-submit {
+  text-align: center;
+  margin-top: 40px;
+  width: 150px;
+  border-radius: 20px;
+  background: #009577;
+  border: 1px solid #009577;
+  font-size: 24px;
+  color: #fff;
+  padding: 5px;
+}
+
 /* Responsive */
 @media screen and (max-width: 1280px) {
     .result {

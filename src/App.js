@@ -1,35 +1,17 @@
-import React, { Component } from 'react';
+
+import React from 'react';
+import {
+  BrowserRouter as Router, Route,
+} from 'react-router-dom';
 import './App.css';
-import forest from '../src/assets/forest-fire.jpg';
-import Header from '../src/components/Header';
-import Input from '../src/components/Input';
-import Result from '../src/components/Result';
+import Home from './components/Home/Home';
+import Data from './components/Data/Data';
 
-class App extends Component {
-  state = {
-    area: '',
-    status: '',
-    accuracy: '',
-  }
-
-  setResult = (area, status, accuracy) => {
-    this.setState({
-      area,
-      status,
-      accuracy
-    })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <img id="bg" src={forest}/>
-        <Header />
-        <Input setResult={this.setResult}/>
-        <Result result={this.state}/>
-      </div>
-    );
-  }
-}
-
-export default App;
+export const App = props => (
+  <Router>
+    <div className="App">
+      <Route path="/" exact component={Home} />
+      <Route path="/data" exact component={Data} />
+    </div>
+  </Router> 
+);
